@@ -119,8 +119,11 @@
     /* tablet e desktop: título e subtítulo ocupam a largura toda do conteúdo, com a mesma margem dos dois lados
        (fill container); o tamanho da fonte acompanha a largura para nenhuma palavra precisar quebrar */
     .hero--type h1, .hero--type .hero__lead { max-width: none; width: 100%; text-wrap: pretty; }
-    .hero--type h1 { font-size: clamp(44px, 5.4vw + 4px, 96px); }
-    .hero--type .hero__lead { font-size: clamp(20px, 1.4vw + 8px, 34px); }
+    /* o tamanho vem da largura do conteúdo (cqi): a linha mais longa de cada um termina exatamente
+       na margem direita, alinhada ao botão do header */
+    .hero--type .hero-text { container-type: inline-size; }
+    .hero--type h1 { font-size: calc(100cqi / var(--h1-em, 15.16)); text-wrap: wrap; }
+    .hero--type .hero__lead { font-size: max(18px, calc(100cqi / var(--lead-em, 45.2))); text-wrap: wrap; }
     .nav--top.is-compact .nav__logo { transform: scale(.7); }
     .nav.nav--top.is-compact .nav__actions .btn { height: 44px; padding-inline: var(--s-5); }
     .nav--top .nav__logo { font-size: clamp(28px, 2vw + 14px, 44px); gap: 8px; }
