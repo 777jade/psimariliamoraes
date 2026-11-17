@@ -103,7 +103,8 @@
   /* fotos */
   #sobre .frame { aspect-ratio: 4 / 5; }   /* retrato da Marília: vertical em todas as larguras */
   #pratica .frame { aspect-ratio: 1390 / 1050; }   /* o desenho inteiro, sem corte */
-  #abordagem h2 { hyphens: manual; -webkit-hyphens: manual; }   /* sem "psicanalí-tica" */
+  /* títulos nunca quebram palavra com hífen (o kit liga a hifenização automática) */
+  h1, h2, h3, h4 { hyphens: manual; -webkit-hyphens: manual; }
   /* o quadro fixo do photo-chapters tem margens próprias (menu + s-6 em cima, s-6 + barra embaixo):
      as vizinhas compensam para o espaço continuar 2 x --rhythm */
   #abordagem { --nav: var(--nav-compact); }   /* o quadro fixo desconta o header já encolhido */
@@ -115,6 +116,11 @@
     :root { --rhythm: 96px; }
 
     :root { --nav: 128px; --nav-compact: 80px; }
+    /* tablet e desktop: título e subtítulo ocupam a largura toda do conteúdo, com a mesma margem dos dois lados
+       (fill container); o tamanho da fonte acompanha a largura para nenhuma palavra precisar quebrar */
+    .hero--type h1, .hero--type .hero__lead { max-width: none; width: 100%; text-wrap: pretty; }
+    .hero--type h1 { font-size: clamp(44px, 5.4vw + 4px, 96px); }
+    .hero--type .hero__lead { font-size: clamp(20px, 1.4vw + 8px, 34px); }
     .nav--top.is-compact .nav__logo { transform: scale(.7); }
     .nav.nav--top.is-compact .nav__actions .btn { height: 44px; padding-inline: var(--s-5); }
     .nav--top .nav__logo { font-size: clamp(28px, 2vw + 14px, 44px); gap: 8px; }
@@ -134,9 +140,6 @@
     :root { --nav: 108px; }
     .nav--top .nav__logo { font-size: 32px; gap: 6px; }
     .nav--top .nav__role { font-size: 17px; }
-    .hero--type h1, .hero--type .hero__lead { max-width: none; width: 100%; text-wrap: pretty; }   /* pretty: sem palavra sozinha na última linha */
-    .hero--type h1 { font-size: clamp(64px, 4.6vw + 8px, 96px); }
-    .hero--type .hero__lead { font-size: clamp(24px, 1.4vw + 8px, 34px); }
   }
 
   /* desenhos à mão: um traço só, cor da tinta do fundo, pontas redondas */
