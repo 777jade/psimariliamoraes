@@ -214,6 +214,11 @@
   #abordagem .mo-ph__head { max-width: none; }
   #abordagem .mo-ph__head > .section-title { margin-bottom: 0; }
   #abordagem .mo-ph__head > p { max-width: 640px; }
+  /* desktop: o texto da abordagem usa o quadro todo, como o subtítulo do topo (mesmo tamanho e mesma margem direita) */
+  @media (min-width: 1024px) {
+    #abordagem .mo-ph__head { container-type: inline-size; }
+    #abordagem .mo-ph__head > p { max-width: none; width: 100%; font-size: max(18px, calc(100cqi / 45.2)); line-height: 1.35; letter-spacing: -0.02em; text-wrap: pretty; }
+  }
 
   /* atendimento: os quatro dados lado a lado no computador, o nome em cima do valor */
   @media (min-width: 1024px) {
