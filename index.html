@@ -230,6 +230,16 @@
     #atendimento .rows__value { grid-column: 1; grid-row: 2; text-align: left; white-space: normal; max-width: none; color: var(--muted); }
   }
 
+
+  /* celular: a caixa dos passos da abordagem fica mais enxuta para a foto aparecer mais */
+  @media (max-width: 639px) {
+    main #abordagem.is-live > .mo-ph { gap: var(--s-4); padding-top: calc(var(--nav, 72px) + var(--s-4)); padding-bottom: var(--s-4); }
+    #abordagem.is-live .mo-ph__panel { left: var(--s-2); right: var(--s-2); bottom: var(--s-2); padding: var(--s-4); gap: var(--s-2); border-radius: 14px; }
+    #abordagem.is-live .mo-ph__ch { gap: 6px; }
+    #abordagem.is-live .mo-ph__ch h3 { font-size: 22px; }
+    #abordagem.is-live .mo-ph__ch p { font-size: 14.5px; line-height: 1.45; }
+    #abordagem.is-live .mo-ph__count { font-size: 12px; }
+  }
   /* sem o efeito elástico com mouse/trackpad; no toque fica o padrão (puxar para atualizar) */
   @media (pointer: fine) { html { overscroll-behavior: none; } }
 </style>
