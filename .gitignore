@@ -1,0 +1,36 @@
+# Só os arquivos que o site usa entram no repositório.
+# O resto da pasta (kit de design, capturas, fotos que não estão no site, configs locais) fica de fora.
+/*
+!/.gitignore
+!/index.html
+!/favicon.svg
+!/share.jpg
+!/assets/
+/assets/*
+!/assets/system.css
+!/assets/system.js
+!/assets/ui/
+/assets/ui/*
+!/assets/ui/cards.css
+!/assets/ui/ui.js
+!/assets/motion/
+/assets/motion/*
+!/assets/motion/motion.css
+!/assets/motion/motion.js
+!/assets/layout/
+/assets/layout/*
+!/assets/layout/layout.css
+!/assets/layout/layout.js
+!/assets/moments/
+/assets/moments/*
+!/assets/moments/moments.js
+!/assets/moments/lib.js
+!/assets/moments/word-highlight/
+!/assets/moments/photo-chapters/
+!/assets/img/
+/assets/img/*
+!/assets/img/marilia-*.jpg
+!/assets/img/abordagem-*.jpg
+!/assets/img/diva-creme-*.jpg
+/assets/moments/*/demo.html
+/assets/moments/*/meta.json

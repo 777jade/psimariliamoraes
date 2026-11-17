@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="pt-BR" data-type="service" data-radius="soft" data-buttons="solid" data-motion>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Marília Moraes: psicóloga clínica, online e na Vila Andrade (SP)</title>
+<meta name="description" content="Marília Moraes, psicóloga clínica (CRP&nbsp;06/232946). Atendimento psicológico para crianças, adolescentes e adultos, online e presencial na Vila Andrade, em São Paulo.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Marília Moraes: psicóloga clínica">
+<meta property="og:description" content="Um espaço para colocar em palavras aquilo que ainda não encontrou forma de ser dito.">
+<meta property="og:image" content="share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1d1f1c">
+<!-- <link rel="canonical" href="https://(o domínio da Marília)/"> : still to come, listed in the report -->
+<meta name="site-kind" content="other">
+<meta name="page-type" content="service">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggexSvfedN4.woff2" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/system.css">
+<link rel="stylesheet" href="assets/ui/cards.css">
+<link rel="stylesheet" href="assets/motion/motion.css">
+<link rel="stylesheet" href="assets/layout/layout.css">
+<style>
+:root {
+  --p-bg: #fff5ea; --p-surface: #f2e9de; --p-ink: #1d1f1c; --p-muted: #6a6862;
+  --p-accent: #ae0000; --p-accent-ink: #fff5ea; --p-action: #ae0000; --p-action-ink: #fff5ea;
+  --p-inv-bg: #1d1f1c; --p-inv-surface: #2a2b28; --p-inv-ink: #fff5ea; --p-inv-muted: #a19c94;
+  --p-inv-accent: #fff5ea; --p-inv-accent-ink: #1d1f1c; --p-inv-action: #fff5ea; --p-inv-action-ink: #1d1f1c;
+  --font-display: "Manrope", system-ui, sans-serif;
+  --font-text: "Manrope", system-ui, sans-serif;
+  --display-weight: 400;
+  --display-tracking: -0.035em;
+  --display-tracking-xl: -0.045em;
+  --ly-scale: 0.97;
+}
+</style>
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
+<link rel="modulepreload" href="assets/moments/moments.js">
+<link rel="modulepreload" href="assets/moments/lib.js">
+<link rel="modulepreload" href="assets/moments/word-highlight/moment.js">
+<link rel="modulepreload" href="assets/moments/photo-chapters/moment.js">
+<!-- page CSS, mobile first: the base is the phone; min-width adds the tablet (640) and the desktop (1024) -->
+<style>
+  /* ritmo entre seções (pedido da cliente): cada seção do tamanho do conteúdo, mesmo respiro em
+     cima e embaixo; o hero segue ocupando a primeira tela; photo-chapters dimensiona a própria seção */
+  :root { --rhythm: 72px; }
+  main > section.section:not(.hero, [data-moment="photo-chapters"]) { height: auto; min-height: 0; padding: var(--rhythm) 0; }
+  main > section.section:not(.hero, [data-moment="photo-chapters"]) > .wrap { height: auto; }
+  main > section#sobre { padding-top: calc(var(--rhythm) + 48px); }   /* o pé do hero no celular tem 24px */
+
+
+  /* header e topo (referência da cliente): fundo preto, nome em caixa alta, botão em pílula creme,
+     um traço desenhado à mão ao fundo; o header fica fixo e encolhe ao rolar */
+  :root { --nav: 84px; --nav-compact: 64px; }
+  /* fixo; ao rolar, encolhe para --nav-compact (nome menor, uma linha fina embaixo) */
+  .nav.nav--top { position: fixed; height: var(--nav); border-bottom: 1px solid transparent;
+    transition: height .4s var(--ease), border-color .4s var(--ease); }
+  .nav--top.is-compact { height: var(--nav-compact); border-bottom-color: var(--line); }
+  .nav--top .nav__logo { transform-origin: left center; transition: transform .4s var(--ease); }
+  .nav--top.is-compact .nav__logo { transform: scale(.86); }
+  .nav--top .nav__actions .btn { transition: height .4s var(--ease), background-color var(--dur) var(--ease); }
+  @media (prefers-reduced-motion: reduce) { .nav.nav--top, .nav--top .nav__logo, .nav--top .nav__actions .btn { transition: none; } }
+  .nav--top .nav__bar { gap: var(--s-3); justify-content: space-between; }
+  .nav--top .nav__logo { display: grid; gap: 4px; font: 500 20px/1 var(--font-display); letter-spacing: -0.01em; text-transform: uppercase; }
+  .nav--top .nav__role { font-size: 10.5px; font-weight: 400; letter-spacing: 0.01em; color: var(--ink); }
+  .nav--top .nav__role b { font-weight: 700; letter-spacing: 0.02em; }
+  .nav--top .nav__actions { display: flex; margin-left: auto; }
+  /* .nav.nav--top: vence a regra do kit para telas < 1024 (.nav:not(.is-open) .nav__actions .btn, 12px de lado) */
+  .nav.nav--top .nav__actions .btn { height: 40px; padding-inline: var(--s-4); font-size: 13px; }
+
+  /* botão do header: escondido enquanto o topo está na tela (o topo já tem os seus botões); aparece ao rolar para a seção seguinte */
+  .nav--top .nav__actions { transition: opacity .35s var(--ease), transform .35s var(--ease), visibility 0s linear .35s; }
+  .nav--top:not(.is-past-hero) .nav__actions { opacity: 0; transform: translateY(-6px); visibility: hidden; pointer-events: none; }
+  .nav--top.is-past-hero .nav__actions { transition-delay: 0s; }
+  /* no contato: o mesmo estilo do secundário do topo (contorno creme, fundo transparente) */
+  .nav--top .nav__actions .btn--primary { transition: height .4s var(--ease), background-color .3s var(--ease), color .3s var(--ease), border-color .3s var(--ease); }
+  .nav--top.is-at-contact .nav__actions .btn--primary { background: transparent; color: var(--ink); border-color: color-mix(in oklab, var(--ink) 45%, transparent); }
+  .nav--top.is-at-contact .nav__actions .btn--primary:hover { background: color-mix(in oklab, var(--ink) 10%, transparent); border-color: var(--ink); }
+  @media (prefers-reduced-motion: reduce) { .nav--top .nav__actions { transition: none; } }
+  .btn, .btn--pill { border-radius: 999px; }   /* todos os botões em pílula, como na referência */
+  html { scroll-padding-top: calc(var(--nav-compact) + var(--s-5)); }
+
+  main > section.hero.hero--type { position: relative; overflow: hidden; isolation: isolate; padding-bottom: calc(var(--s-7) + var(--bar, 0px)); }
+  .hero--type > .wrap { position: relative; z-index: 1; }
+  .hero--type .hero-text { height: 100%; display: flex; flex-direction: column; justify-content: flex-end; }
+  .hero--type h1 { font-size: clamp(34px, 5.6vw + 8px, 80px); line-height: 1.08; letter-spacing: -0.045em; max-width: 15.5em; text-wrap: balance; }
+  .hero--type .hero__lead { font-size: clamp(19px, 1.5vw + 12px, 34px); line-height: 1.35; letter-spacing: -0.02em; max-width: 30em; }
+  .hero--type .hero__text > h1 + .hero__lead { margin-top: var(--s-6); }
+  /* celular: o traço entra no fluxo, logo acima do título, e fica sempre à vista (nunca atrás das letras nem fora da tela) */
+  .hero__line { display: block; position: relative; z-index: 0; width: 100%; height: auto; margin: 0 0 var(--s-6);
+    stroke: var(--ink); stroke-opacity: .28; stroke-width: 7.5; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
+  @media (prefers-reduced-motion: no-preference) {
+    .hero__line path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: hero-draw 4s cubic-bezier(.45,.05,.25,1) .25s forwards; }
+    @keyframes hero-draw { to { stroke-dashoffset: 0; } }
+  }
+  /* toque: sem o atraso do toque duplo e sem o flash cinza (botões já afundam ao toque) */
+  a, button, .btn { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+
+  /* fotos */
+  #sobre .frame { aspect-ratio: 4 / 5; }   /* retrato da Marília: vertical em todas as larguras */
+  #pratica .frame { aspect-ratio: 1390 / 1050; }   /* o desenho inteiro, sem corte */
+  #abordagem h2 { hyphens: manual; -webkit-hyphens: manual; }   /* sem "psicanalí-tica" */
+  /* o quadro fixo do photo-chapters tem margens próprias (menu + s-6 em cima, s-6 + barra embaixo):
+     as vizinhas compensam para o espaço continuar 2 x --rhythm */
+  #abordagem { --nav: var(--nav-compact); }   /* o quadro fixo desconta o header já encolhido */
+  #pratica { padding-bottom: calc(2 * var(--rhythm) - var(--nav-compact) - var(--s-6)) !important; }
+  /* a frase fecha o quadro vermelho da abordagem: mesma cor, sem emenda, um respiro curto acima */
+  #frase { padding-top: var(--s-5) !important; }
+
+  @media (min-width: 640px) {
+    :root { --rhythm: 96px; }
+
+    :root { --nav: 128px; --nav-compact: 80px; }
+    .nav--top.is-compact .nav__logo { transform: scale(.7); }
+    .nav.nav--top.is-compact .nav__actions .btn { height: 44px; padding-inline: var(--s-5); }
+    .nav--top .nav__logo { font-size: clamp(28px, 2vw + 14px, 44px); gap: 8px; }
+    .nav--top .nav__role { font-size: clamp(16px, 1vw + 8px, 26px); }
+    .nav--top .nav__bar { gap: var(--s-4); }
+    .nav.nav--top .nav__actions .btn { height: 52px; padding-inline: var(--s-6); font-size: 16px; }
+    main > section.hero.hero--type { padding-bottom: calc(var(--s-8) + var(--s-4)); }
+    /* tablet e desktop: volta a ser a camada atrás das palavras, como na referência */
+    main > section.hero--type > .wrap, .hero--type .hero-text { position: static; }   /* vence o position: relative do kit no .wrap */
+    .hero--type .hero__text > :not(.hero__line) { position: relative; z-index: 1; }
+    .hero__line { position: absolute; left: 4%; width: 92%; top: calc(var(--nav) + 4vh); max-height: 52%; margin: 0; stroke-opacity: .18; stroke-width: 4; }   /* ~5px no desktop */
+    main > section#sobre { padding-top: var(--rhythm); }
+  }
+  @media (min-width: 1024px) {
+    :root { --rhythm: 120px; }
+    /* hero no desktop: logo menor; título e subtítulo ocupam a largura toda do conteúdo (fill container) */
+    :root { --nav: 108px; }
+    .nav--top .nav__logo { font-size: 32px; gap: 6px; }
+    .nav--top .nav__role { font-size: 17px; }
+    .hero--type h1, .hero--type .hero__lead { max-width: none; width: 100%; text-wrap: pretty; }   /* pretty: sem palavra sozinha na última linha */
+    .hero--type h1 { font-size: clamp(64px, 4.6vw + 8px, 96px); }
+    .hero--type .hero__lead { font-size: clamp(24px, 1.4vw + 8px, 34px); }
+  }
+
+  /* desenhos à mão: um traço só, cor da tinta do fundo, pontas redondas */
+  .doodle { stroke: currentColor; stroke-width: 2.5px; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; overflow: visible; }
+  .doodle path { vector-effect: non-scaling-stroke; }
+  .ring { position: relative; isolation: isolate; display: inline-block; white-space: nowrap; padding: 0 .12em; margin: 0 .14em; }
+  /* "algo novo" em preto sobre o círculo vermelho (vermelho sobre vermelho perdia leitura); o traço passa por trás das letras */
+  #frase .ring strong, #frase .ring strong .mo-w, #frase .ring strong .mo-w.is-on { color: var(--ink); font-weight: 500; }
+  #frase .doodle--ring { z-index: -1; color: var(--p-accent-ink); }   /* traço branco (creme) sobre o vermelho */
+  .doodle--ring { position: absolute; left: -7%; top: -26%; width: 114%; max-width: none; height: 150%; color: var(--accent); pointer-events: none; }
+
+  /* contato (referência da cliente): painel vermelho de cantos redondos */
+  .contact__panel { position: relative; border-radius: 32px 32px 0 0; padding: var(--rhythm) 0 calc(var(--s-6) + var(--bar, 0px)); }
+  .contact__title { text-align: center; font-size: clamp(24px, 1.6vw + 16px, 44px); letter-spacing: -0.03em; }
+  .contact__btn { color: var(--p-ink); margin-top: var(--s-7); display: flex; width: fit-content; margin-inline: auto; }   /* centralizado, embaixo do título */
+  .contact__data { margin-top: var(--rhythm); }
+  .contact__data h3 { font: 500 17px/1.3 var(--font-text); }
+  .contact__data p { margin-top: var(--s-4); font-size: 17px; display: flex; align-items: flex-start; flex-wrap: wrap; column-gap: var(--s-2); row-gap: var(--s-1); }
+  .contact__data a { text-decoration: underline; text-decoration-color: transparent; text-underline-offset: .2em; transition: text-decoration-color var(--dur) var(--ease); }
+  .contact__data a:hover, .contact__data a:focus-visible { text-decoration-color: currentColor; }
+  .contact__sep { opacity: .6; }
+  .contact__legal { margin-top: var(--rhythm); padding-top: var(--s-5); border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s-3); font-size: 13px; color: var(--muted); }
+  .contact__legal a { color: inherit; text-decoration: underline; text-underline-offset: .2em; }
+  @media (max-width: 639px) { .contact__btn { width: 100%; justify-content: space-between; } .contact__data p { flex-direction: column; } .contact__sep { display: none; } }
+  @media (min-width: 640px) { .contact__panel { border-radius: 40px 40px 0 0; } .contact__data h3, .contact__data p { font-size: 22px; } }
+
+  .thread--h { margin: 0 !important; height: 40px !important; }
+  @media (max-width: 639px) {
+    #atendimento .rows > li { grid-template-columns: minmax(0, 1fr); }
+    #atendimento .rows__value { grid-column: 1; grid-row: 2; text-align: left; white-space: normal; max-width: none; color: var(--muted); }
+  }
+
+  /* botões: dois tamanhos só (normal 48/52, grande 56/64) */
+  .btn { height: 48px; padding-inline: var(--s-5); font-size: 16px; }
+  .hero--type .btn--secondary { text-decoration: none; background: transparent; color: var(--ink); border-color: color-mix(in oklab, var(--ink) 45%, transparent); }
+  .hero--type .btn--secondary:hover { background: color-mix(in oklab, var(--ink) 10%, transparent); border-color: var(--ink); }
+  .hero--type .btn--hero, .contact__btn { height: 56px; padding-inline: var(--s-6); font-size: 17px; }
+  @media (min-width: 640px) {
+    .btn { height: 52px; padding-inline: var(--s-6); }
+    .hero--type .btn--hero, .contact__btn { height: 64px; padding-inline: var(--s-7); font-size: 19px; }
+  }
+
+  /* como trabalho: um fio desenhado à mão acompanha a leitura (avança com a rolagem) e
+     as palavras-chave ganham um grifo à mão quando chegam ao meio da tela */
+  .pratica__grid { position: relative; }
+  .thread { stroke: var(--accent); stroke-width: 2.5px; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
+  .thread path { vector-effect: non-scaling-stroke; }
+  .thread--v { display: none; }
+  .thread--h { display: block; width: 100%; height: 48px; margin: var(--s-2) 0; }
+  .hl { position: relative; white-space: nowrap; }
+  .hl > svg { position: absolute; left: -2%; bottom: -.32em; width: 104%; height: .5em; stroke: var(--accent); stroke-width: 2.5px; stroke-linecap: round; overflow: visible; }
+  .hl > svg path { vector-effect: non-scaling-stroke; }
+  .is-anim .thread path { stroke-dasharray: 1; stroke-dashoffset: calc(1 - var(--p, 0)); }
+  .is-anim .hl > svg path { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .9s cubic-bezier(.45,.05,.25,1) var(--d, 0s); }
+  .is-anim .hl.is-on > svg path { stroke-dashoffset: 0; }
+  @media (min-width: 1024px) {
+    .pratica__grid > .pratica__text, .pratica__grid > .pratica__photo { grid-row: 1; }
+    .thread--h { display: none; }
+    .thread--v { display: block; position: absolute; top: 4%; bottom: 4%; height: 92%; width: 72px;
+      left: calc((100% - 11 * var(--gutter)) / 12 * 6.5 + 6 * var(--gutter)); transform: translateX(-50%); }
+  }
+
+  /* sobre mim: a foto anda devagar com a rolagem */
+  .is-anim #sobre .frame__img { scale: 1.08; translate: 0 var(--py, 0px); }
+
+  /* títulos de seção: a largura inteira da página, entre as margens, acima do conteúdo */
+  .section-title { width: 100%; max-width: none; margin-bottom: var(--s-6); text-wrap: balance; }
+  @media (min-width: 1024px) { .section-title { margin-bottom: var(--s-7); } }
+  #abordagem .mo-ph__head { max-width: none; }
+  #abordagem .mo-ph__head > .section-title { margin-bottom: 0; }
+  #abordagem .mo-ph__head > p { max-width: 640px; }
+
+  /* atendimento: os quatro dados lado a lado no computador, o nome em cima do valor */
+  @media (min-width: 1024px) {
+    #atendimento .rows { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: var(--gutter); }
+    #atendimento .rows > li { grid-template-columns: minmax(0, 1fr); padding-block: var(--s-5); border-top: 1px solid var(--line); }
+    #atendimento .rows > li:first-child { padding-top: var(--s-5); }
+    #atendimento .rows__value { grid-column: 1; grid-row: 2; text-align: left; white-space: normal; max-width: none; color: var(--muted); }
+  }
+
+  /* sem o efeito elástico com mouse/trackpad; no toque fica o padrão (puxar para atualizar) */
+  @media (pointer: fine) { html { overscroll-behavior: none; } }
+</style>
+</head>
+<body>
+<!-- type: service
+     deal: hero split, nav nav-centre, close close-type, footer footer-columns, rhythm surface-pairs, buttons solid, mark initial, grounds brand
+     palette: the client's own three colours via start.mjs brand (#FFF5EA cream, #AE0000 red, #1D1F1C black), type manrope (Manrope, at the client's request)
+     moments: photo-chapters in #abordagem, word-highlight in #frase -->
+
+<header class="nav nav--top ground-inverse">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#sobre">Pular para o conteúdo</a>
+    <a class="nav__logo" href="#top" translate="no">
+      <span class="nav__name">Marília Moraes</span>
+      <span class="nav__role">Psicóloga clínica <b>CRP:06/232946</b></span>
+    </a>
+    <div class="nav__actions">
+      <a class="btn btn--primary btn--pill" href="https://wa.me/5511972941253?text=Ol%C3%A1%2C%20Mar%C3%ADlia!%20Gostaria%20de%20agendar%20uma%20conversa." target="_blank" rel="noopener">Agendar conversa</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero hero--type ground-inverse" data-enter aria-labelledby="hero-h">
+    <div class="wrap"><div class="hero-text hero__text">
+      <svg class="hero__line" viewBox="0 0 1100 380" fill="none" aria-hidden="true" focusable="false">
+        <path pathLength="1" d="M70 200C40 120 110 60 200 70C300 80 380 150 350 240C320 320 190 340 110 300C40 262 50 170 130 140C220 110 330 160 300 250C280 310 180 320 140 260C100 200 150 110 230 100C320 90 340 200 260 230C190 255 120 210 150 150C175 100 250 40 300 80C350 120 300 200 230 190C160 180 90 120 130 70C160 30 230 20 250 60C270 100 220 150 170 130C120 110 150 60 190 50C240 40 280 110 250 170C225 220 170 250 160 290C200 300 300 315 370 330C430 355 500 360 560 330C640 290 680 200 740 140C790 90 850 60 910 60C1010 60 1080 130 1080 210C1080 300 1000 350 920 350C840 350 780 290 780 220C780 150 840 110 900 110C970 110 1020 160 1020 215C1020 275 970 305 920 305C870 305 835 265 835 220C835 180 865 155 900 155C940 155 965 185 965 215C965 245 940 262 915 262C895 262 880 245 880 228C880 212 893 200 908 200C922 200 932 212 930 225"/>
+      </svg>
+      <h1 id="hero-h">Um espaço para colocar em palavras aquilo que ainda não encontrou forma de ser dito</h1>
+      <p class="hero__lead">Atendimento psicológico para crianças, adolescentes e adultos, online ou presencial (Vila&nbsp;Andrade-SP).</p>
+      <div class="btn-row">
+        <a class="btn btn--primary btn--pill btn--hero" href="https://wa.me/5511972941253?text=Ol%C3%A1%2C%20Mar%C3%ADlia!%20Gostaria%20de%20agendar%20uma%20conversa." target="_blank" rel="noopener"><span>Agendar conversa</span><svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+        <a class="btn btn--secondary btn--pill btn--hero" href="#sobre">Conhecer mais</a>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="section" id="sobre" aria-labelledby="sobre-h">
+    <div class="wrap">
+      <h2 class="section-title" id="sobre-h">Sobre mim</h2>
+      <div class="grid grid--top">
+        <div class="span-5 stack-4">
+          <p class="t-lead">Sou psicóloga formada pela Universidade Presbiteriana Mackenzie e pós-graduanda em psicanálise, filosofia e sociedade.</p>
+          <h3 class="t-card" id="sobre-1">De onde vem meu olhar</h3>
+          <p>Minha relação com a psicologia começou através da arte. O <span class="hl">cinema<svg viewBox="0 0 200 14" preserveAspectRatio="none" fill="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M3 9C40 4 90 12 140 7C165 5 185 6 197 8"/></svg></span>, a <span class="hl">música<svg viewBox="0 0 200 14" preserveAspectRatio="none" fill="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M3 9C40 4 90 12 140 7C165 5 185 6 197 8"/></svg></span> e a <span class="hl">literatura<svg viewBox="0 0 200 14" preserveAspectRatio="none" fill="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M3 9C40 4 90 12 140 7C165 5 185 6 197 8"/></svg></span> despertaram em mim perguntas sobre o ser humano: por que determinadas obras nos atravessam tão profundamente? Por que algo que nos encanta ou aflige pode provocar efeitos tão diferentes em cada pessoa?</p>
+          <p>Foi a partir dessas perguntas que percebi que meus interesses convergiam para uma questão maior: compreender o ser humano, sua complexidade e tudo aquilo que atravessa sua existência.</p>
+        </div>
+        <div class="frame frame--photo m-zoom span-5 start-8 sobre__photo">
+          <img class="frame__img" src="assets/img/marilia-960.jpg" srcset="assets/img/marilia-500.jpg 500w, assets/img/marilia-960.jpg 960w, assets/img/marilia-1239.jpg 1239w" sizes="(max-width: 1023px) 100vw, 42vw" width="1239" height="1752" alt="Marília Moraes, em preto e branco, de camisa listrada, olhando para a câmera" style="object-position: 50% 30%" loading="lazy" decoding="async" data-source="client">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section ground-surface" id="pratica" aria-labelledby="sobre-2">
+    <div class="wrap">
+      <h2 class="section-title" id="sobre-2">Como trabalho</h2>
+      <div class="grid grid--top pratica__grid">
+        <svg class="thread thread--v" viewBox="0 0 80 1000" preserveAspectRatio="none" fill="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M40 0C70 80 10 160 40 240C60 300 70 360 50 420C36 460 10 470 14 440C18 410 60 420 58 470C56 540 20 600 36 680C50 760 70 840 40 1000"/></svg>
+        <div class="span-5 start-8 stack-4 pratica__text">
+          <p>Hoje, essa mesma curiosidade sustenta minha prática clínica. Em cada encontro, me interesso pela <span class="hl">singularidade da sua história<svg viewBox="0 0 200 14" preserveAspectRatio="none" fill="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M3 9C40 4 90 12 140 7C165 5 185 6 197 8"/></svg></span>, buscando construir, junto com você, um espaço onde seja possível colocar em palavras aquilo que, muitas vezes, ainda não encontrou forma de ser dito.</p>
+          <p>Aqui, você está no centro do seu processo terapêutico, em um espaço de investigação de si mesmo, <span class="hl">livre de julgamentos<svg viewBox="0 0 200 14" preserveAspectRatio="none" fill="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M3 9C40 4 90 12 140 7C165 5 185 6 197 8"/></svg></span>.</p>
+          <h3 class="t-card" id="sobre-3">No que acredito</h3>
+          <p>Acredito em uma relação terapêutica baseada na <span class="hl">parceria<svg viewBox="0 0 200 14" preserveAspectRatio="none" fill="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M3 9C40 4 90 12 140 7C165 5 185 6 197 8"/></svg></span> e na <span class="hl">horizontalidade<svg viewBox="0 0 200 14" preserveAspectRatio="none" fill="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M3 9C40 4 90 12 140 7C165 5 185 6 197 8"/></svg></span>. Por isso, além da dimensão individual, considero também as relações, a cultura e o contexto social que atravessam cada experiência.</p>
+          <p>A terapia pode ser um espaço para perceber e ressignificar aquilo que se repete e causa sofrimento, abrindo possibilidades para novas formas de se relacionar consigo mesmo, com o outro e com o mundo. Uma construção conjunta em direção a uma vida mais autêntica, leve e coerente com quem somos e desejamos ser.</p>
+        </div>
+        <svg class="thread thread--h" viewBox="0 0 400 60" preserveAspectRatio="none" fill="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M4 30C60 10 100 50 160 30C200 16 230 14 236 30C240 44 216 50 212 36C208 20 250 14 300 30C340 42 370 36 396 24"/></svg>
+        <div class="frame frame--photo m-zoom span-6 start-1 pratica__photo">
+          <img class="frame__img" src="assets/img/diva-creme-960.jpg" srcset="assets/img/diva-creme-500.jpg 500w, assets/img/diva-creme-960.jpg 960w, assets/img/diva-creme-1390.jpg 1390w" sizes="(max-width: 1023px) 100vw, 50vw" width="1390" height="1050" alt="Desenho a traço de um divã capitonê com pés curvos, em vermelho sobre fundo creme" loading="lazy" decoding="async" data-source="client">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- photo-chapters: os três movimentos, uma foto por capítulo, revelada de baixo para cima conforme a rolagem -->
+  <section class="section ground-brand" id="abordagem" data-moment="photo-chapters" aria-labelledby="abordagem-h">
+    <div class="wrap mo-ph">
+      <div class="mo-ph__head"><h2 class="section-title" id="abordagem-h">Abordagem psicanalítica: construir novos sentidos</h2><p>A psicanálise compreende a linguagem como parte fundamental da forma como nos constituímos, damos sentido às experiências e construímos nossa relação com o mundo.</p></div>
+      <ol class="mo-ph__list">
+        <li class="mo-ph__ch" id="passo-1">
+          <figure class="mo-ph__pic"><img src="assets/img/abordagem-1-1312.jpg" srcset="assets/img/abordagem-1-500.jpg 500w, assets/img/abordagem-1-960.jpg 960w, assets/img/abordagem-1-1312.jpg 1312w" sizes="100vw" width="1312" height="1984" alt="Marília Moraes em dupla exposição, em preto e branco, com o rosto de perfil sobreposto a um jardim com chafariz" style="object-position: 60% 42%" decoding="async" data-source="client"></figure>
+          <h3>Nomear</h3>
+          <p>É através da linguagem que damos significado ao que vivemos. Ao encontrar palavras para aquilo que antes não tinha forma, começamos a compreender nossa própria história.</p>
+        </li>
+        <li class="mo-ph__ch" id="passo-2">
+          <figure class="mo-ph__pic"><img src="assets/img/abordagem-3-1312.jpg" srcset="assets/img/abordagem-3-500.jpg 500w, assets/img/abordagem-3-960.jpg 960w, assets/img/abordagem-3-1312.jpg 1312w" sizes="100vw" width="1312" height="1984" alt="Aranhas e fios de teia contra o céu claro, em preto e branco, com galhos escuros no canto" style="object-position: 50% 40%" decoding="async" data-source="client"></figure>
+          <h3>Elaborar</h3>
+          <p>A terapia é um espaço para olhar para aquilo que nos constitui, investigar experiências e compreender os sentidos que construímos ao longo da vida.</p>
+        </li>
+        <li class="mo-ph__ch" id="passo-3">
+          <figure class="mo-ph__pic"><img src="assets/img/abordagem-2-1312.jpg" srcset="assets/img/abordagem-2-500.jpg 500w, assets/img/abordagem-2-960.jpg 960w, assets/img/abordagem-2-1312.jpg 1312w" sizes="100vw" width="1312" height="1984" alt="Marília Moraes desfocada em primeiro plano, de camisa clara, olhando para um gato laranja sentado na grama" style="object-position: 50% 45%" decoding="async" data-source="client"></figure>
+          <h3>Ressignificar</h3>
+          <p>Dar um novo sentido ao que foi vivido não significa apagar o passado. Significa permitir que ele ocupe seu lugar e abrir espaço para novas formas de ser, sentir e estar.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section statement ground-brand" id="frase" data-moment="word-highlight" aria-label="O passado e o novo">
+    <div class="wrap">
+      <p class="mo-wh__text" id="frase-texto">O passado pode ocupar seu lugar sem impedir que <span class="ring"><strong>algo novo</strong><svg class="doodle doodle--ring" viewBox="0 0 300 110" preserveAspectRatio="none" fill="none" aria-hidden="true" focusable="false"><path d="M178 12C120 4 40 14 16 44C-4 72 50 100 150 100C240 100 292 80 288 50C284 22 220 8 150 10C110 12 80 18 62 26"/></svg></span> possa surgir.</p>
+    </div>
+  </section>
+
+  <section class="section" id="atendimento" aria-labelledby="atendimento-h">
+    <div class="wrap">
+      <h2 class="section-title" id="atendimento-h">Como é o atendimento</h2>
+      <div class="grid grid--top">
+        <div class="span-12">
+          <ul class="rows">
+            <li><span class="rows__name">Para quem</span><span class="rows__value">Crianças, adolescentes e adultos</span></li>
+            <li><span class="rows__name">Formato</span><span class="rows__value">Online e presencial</span></li>
+            <li><span class="rows__name">Consultório</span><span class="rows__value">Vila Andrade, São Paulo</span></li>
+            <li><span class="rows__name">Abordagem</span><span class="rows__value">Psicanálise</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="contact" id="contact" aria-labelledby="close-h">
+  <div class="contact__panel ground-brand">
+    <div class="wrap">
+      <h2 class="contact__title" id="close-h">vamos agendar uma conversa?</h2>
+      <a class="btn btn--primary btn--pill contact__btn" href="https://wa.me/5511972941253?text=Ol%C3%A1%2C%20Mar%C3%ADlia!%20Gostaria%20de%20agendar%20uma%20conversa." target="_blank" rel="noopener"><span>Entrar em contato pelo <span translate="no">WhatsApp</span></span><svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+      <div class="contact__data">
+        <h3>Dados de contato</h3>
+        <p><a href="https://wa.me/5511972941253?text=Ol%C3%A1%2C%20Mar%C3%ADlia!%20Gostaria%20de%20agendar%20uma%20conversa." target="_blank" rel="noopener">(11)&nbsp;97294-1253</a><span class="contact__sep" aria-hidden="true">|</span><a href="mailto:mariliamoraespsi@gmail.com" translate="no">mariliamoraespsi@gmail.com</a></p>
+      </div>
+      <div class="contact__legal">
+        <span>&copy; 2026 <span translate="no">Marília Moraes</span>, psicóloga clínica, CRP&nbsp;06/232946</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script type="module" src="assets/system.js"></script>
+<script type="module" src="assets/motion/motion.js"></script>
+<script type="module" src="assets/layout/layout.js"></script>
+<script type="module">
+  // header: encolhe depois dos primeiros 24px de rolagem
+  const nav = document.querySelector('.nav--top');
+  // e mostra o botão "Agendar conversa" só depois que o topo (hero) passa por baixo do header
+  const hero = document.querySelector('main > .hero');
+  // no contato (que já tem o botão principal) o botão do header vira o secundário
+  const contact = document.querySelector('#contact');
+  const sync = () => {
+    nav.classList.toggle('is-compact', scrollY > 24);
+    nav.classList.toggle('is-past-hero', !hero || hero.getBoundingClientRect().bottom <= nav.offsetHeight);
+    nav.classList.toggle('is-at-contact', !!contact && contact.getBoundingClientRect().top <= innerHeight * 0.75);
+  };
+  addEventListener('scroll', sync, { passive: true }); addEventListener('resize', sync); sync();
+</script>
+<script type="module">
+  // como trabalho: o fio avança com a rolagem; os grifos se desenham uma vez, ao chegar ao meio da tela
+  const sec = document.querySelector('#pratica');
+  if (sec && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    sec.classList.add('is-anim');
+    const threads = [...sec.querySelectorAll('.thread')];
+    let raf = 0;
+    const tick = () => {
+      raf = 0;
+      const vh = innerHeight;
+      for (const t of threads) {
+        const r = t.getBoundingClientRect();
+        if (!r.height) continue;
+        const start = vh * 0.85, end = vh * 0.35;          // começa a desenhar quando entra, termina perto do topo
+        const p = Math.min(1, Math.max(0, (start - r.top) / (r.height + start - end)));
+        t.style.setProperty('--p', p.toFixed(4));
+      }
+    };
+    const ask = () => { if (!raf) raf = requestAnimationFrame(tick); };
+    addEventListener('scroll', ask, { passive: true }); addEventListener('resize', ask); tick();
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('is-on'); io.unobserve(e.target); }
+    }), { rootMargin: '0px 0px -30% 0px' });
+    sec.querySelectorAll('.hl').forEach((h, i) => { h.style.setProperty('--d', (i % 2 ? .15 : 0) + 's'); io.observe(h); });
+  }
+</script>
+<script type="module">
+  // sobre mim: os grifos se desenham uma vez ao chegar perto do meio da tela; a foto desliza
+  // até 4% conforme a seção passa
+  const sec = document.querySelector('#sobre');
+  if (sec && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    sec.classList.add('is-anim');
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('is-on'); io.unobserve(e.target); }
+    }), { rootMargin: '0px 0px -30% 0px' });
+    sec.querySelectorAll('.hl').forEach((el, i) => { if (el.classList.contains('hl')) el.style.setProperty('--d', (i * .12) + 's'); io.observe(el); });
+    const img = sec.querySelector('.frame__img');
+    let raf = 0;
+    const tick = () => {
+      raf = 0;
+      const r = img.parentElement.getBoundingClientRect(), vh = innerHeight;
+      const p = Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height)));   // 0 entrando, 1 saindo
+      img.style.setProperty('--py', ((0.5 - p) * 8).toFixed(2) + '%');
+    };
+    const ask = () => { if (!raf) raf = requestAnimationFrame(tick); };
+    addEventListener('scroll', ask, { passive: true }); addEventListener('resize', ask); tick();
+  }
+</script>
+<script type="module">
+  // links internos (como "Conhecer mais"): rolagem suave e com ritmo próprio (~0,9 s, acelera e desacelera),
+  // parando logo abaixo do header encolhido; sem animação para quem pediu menos movimento
+  const calm = matchMedia('(prefers-reduced-motion: reduce)');
+  const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+    const id = a.getAttribute('href').slice(1);
+    const el = id && document.getElementById(id);
+    if (!el) return;
+    e.preventDefault();
+    const pad = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+    const from = scrollY, to = Math.min(el.getBoundingClientRect().top + scrollY - pad, document.documentElement.scrollHeight - innerHeight);
+    const done = () => { history.replaceState(null, '', '#' + id); el.focus?.({ preventScroll: true }); };
+    if (calm.matches || Math.abs(to - from) < 4) { scrollTo(0, to); return done(); }
+    const dur = Math.min(1100, Math.max(600, Math.abs(to - from) * 0.6)), t0 = performance.now();
+    const step = now => {
+      const t = Math.min(1, (now - t0) / dur);
+      scrollTo(0, from + (to - from) * ease(t));
+      t < 1 ? requestAnimationFrame(step) : done();
+    };
+    requestAnimationFrame(step);
+  });
+</script>
+</body>
+</html>
