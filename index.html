@@ -214,10 +214,12 @@
   #abordagem .mo-ph__head { max-width: none; }
   #abordagem .mo-ph__head > .section-title { margin-bottom: 0; }
   #abordagem .mo-ph__head > p { max-width: 640px; }
-  /* desktop: o texto da abordagem usa o quadro todo, como o subtítulo do topo (mesmo tamanho e mesma margem direita) */
-  @media (min-width: 1024px) {
-    #abordagem .mo-ph__head { container-type: inline-size; }
-    #abordagem .mo-ph__head > p { max-width: none; width: 100%; font-size: max(18px, calc(100cqi / 45.2)); line-height: 1.35; letter-spacing: -0.02em; text-wrap: pretty; }
+  /* tablet e desktop: o texto da abordagem usa o quadro todo (mesmo tamanho e peso de sempre), em duas linhas,
+     quebrando depois de "constituímos," */
+  .br-wide { display: none; }
+  @media (min-width: 640px) {
+    #abordagem .mo-ph__head > p { max-width: none; width: 100%; text-wrap: wrap; }
+    .br-wide { display: inline; }
   }
 
   /* atendimento: os quatro dados lado a lado no computador, o nome em cima do valor */
@@ -306,7 +308,7 @@
   <!-- photo-chapters: os três movimentos, uma foto por capítulo, revelada de baixo para cima conforme a rolagem -->
   <section class="section ground-brand" id="abordagem" data-moment="photo-chapters" aria-labelledby="abordagem-h">
     <div class="wrap mo-ph">
-      <div class="mo-ph__head"><h2 class="section-title" id="abordagem-h">Abordagem psicanalítica: construir novos sentidos</h2><p>A psicanálise compreende a linguagem como parte fundamental da forma como nos constituímos, damos sentido às experiências e construímos nossa relação com o mundo.</p></div>
+      <div class="mo-ph__head"><h2 class="section-title" id="abordagem-h">Abordagem psicanalítica: construir novos sentidos</h2><p>A psicanálise compreende a linguagem como parte fundamental da forma como nos constituímos,<br class="br-wide"> damos sentido às experiências e construímos nossa relação com o mundo.</p></div>
       <ol class="mo-ph__list">
         <li class="mo-ph__ch" id="passo-1">
           <figure class="mo-ph__pic"><img src="assets/img/abordagem-1-1312.jpg" srcset="assets/img/abordagem-1-500.jpg 500w, assets/img/abordagem-1-960.jpg 960w, assets/img/abordagem-1-1312.jpg 1312w" sizes="100vw" width="1312" height="1984" alt="Marília Moraes em dupla exposição, em preto e branco, com o rosto de perfil sobreposto a um jardim com chafariz" style="object-position: 60% 42%" decoding="async" data-source="client"></figure>
