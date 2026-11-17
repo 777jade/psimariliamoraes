@@ -216,8 +216,11 @@
   #abordagem .mo-ph__head > p { max-width: 640px; }
   /* tablet e desktop: o texto da abordagem usa o quadro todo (mesmo tamanho e peso de sempre); nas telas largas cabe numa linha */
   @media (min-width: 640px) {
-    #abordagem .mo-ph__head > p { max-width: none; width: 100%; text-wrap: wrap; }
+    /* justificado: quando quebra em duas linhas, a primeira termina exatamente na borda direita da foto */
+    #abordagem .mo-ph__head > p { max-width: none; width: 100%; text-wrap: wrap; text-align: justify; hyphens: manual; -webkit-hyphens: manual; }
   }
+  /* telas largas, onde a frase cabe numa linha só: a linha também vai até a borda da foto */
+  @media (min-width: 1430px) { #abordagem .mo-ph__head > p { text-align-last: justify; } }
 
   /* atendimento: os quatro dados lado a lado no computador, o nome em cima do valor */
   @media (min-width: 1024px) {
